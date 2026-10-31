@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+
+    --color-royal-950: #0a0d13;
+    --color-royal-900: #0f141d;
+    --color-royal-850: #131a26;
+    --color-royal-800: #182130;
+    --color-royal-700: #223043;
+    --color-royal-600: #2f3f57;
+    --color-royal-500: #41557a;
+    --color-royal-400: #5f76a0;
+    --color-royal-300: #8aa0c4;
+
+    --color-gold-100: #f8f1da;
+    --color-gold-200: #efdfae;
+    --color-gold-300: #e2c877;
+    --color-gold-400: #d3b051;
+    --color-gold-500: #c9a227;
+    --color-gold-600: #a8841d;
+    --color-gold-700: #86671a;
+    --color-gold-800: #644c15;
+    --color-gold-900: #4b3a14;
+
+    --color-ivory-50: #fbf9f3;
+    --color-ivory-100: #f6f1e6;
+    --color-ivory-200: #ede5d2;
+    --color-ivory-300: #e0d4ba;
+    --color-ivory-400: #d0bf9e;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-ivory-50 text-royal-900 antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+        font-family: var(--font-display);
+    }
+
+    ::selection {
+        background-color: var(--color-gold-500);
+        color: white;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+
+    .btn-gold {
+        @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-gradient-to-b from-gold-400 to-gold-600 text-royal-950 shadow-lg shadow-gold-600/25 hover:from-gold-300 hover:to-gold-500 focus:ring-gold-400;
+    }
+
+    .btn-royal {
+        @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-royal-900 text-ivory-50 shadow-lg shadow-royal-900/20 hover:bg-royal-800 focus:ring-royal-600;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 border border-royal-900/20 bg-white text-royal-900 hover:border-gold-500 hover:text-gold-700 focus:ring-gold-400;
+    }
+
+    .btn-ghost-dark {
+        @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 border border-ivory-300/40 bg-transparent text-ivory-100 hover:border-gold-400 hover:text-gold-200 focus:ring-gold-400;
+    }
+
+    .btn-sm {
+        @apply px-3.5 py-1.5 text-xs;
+    }
+
+    .card {
+        @apply rounded-lg bg-white shadow-sm ring-1 ring-royal-900/10;
+    }
+
+    .card-dark {
+        @apply rounded-lg bg-gradient-to-b from-royal-800 to-royal-900 text-ivory-100 shadow-xl ring-1 ring-royal-700/60;
+    }
+
+    .input {
+        @apply block w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-sm text-royal-900 shadow-sm ring-1 ring-inset ring-royal-900/15 placeholder:text-royal-900/40 focus:ring-2 focus:ring-inset focus:ring-gold-500;
+    }
+
+    .label {
+        @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-royal-900/70;
+    }
+
+    .badge {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide;
+    }
+
+    .badge-gold {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide bg-gold-500/15 text-gold-700 ring-1 ring-gold-500/40;
+    }
+
+    .badge-green {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide bg-emerald-500/10 text-emerald-700 ring-1 ring-emerald-500/30;
+    }
+
+    .badge-red {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide bg-rose-500/10 text-rose-700 ring-1 ring-rose-500/30;
+    }
+
+    .badge-blue {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide bg-sky-500/10 text-sky-700 ring-1 ring-sky-500/30;
+    }
+
+    .badge-amber {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide bg-amber-500/10 text-amber-700 ring-1 ring-amber-500/30;
+    }
+
+    .badge-grey {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide bg-royal-900/5 text-royal-900/70 ring-1 ring-royal-900/10;
+    }
+
+    .divider-gold {
+        @apply h-px w-16 bg-gradient-to-r from-gold-500 to-transparent;
+    }
+
+    .section-title {
+        @apply font-display text-2xl font-bold text-royal-900 sm:text-3xl;
+    }
+
+    .table-base {
+        @apply w-full text-left text-sm text-royal-900;
+    }
+
+    .table-base thead {
+        @apply text-[11px] uppercase tracking-wider text-royal-900/50;
+    }
+
+    .table-base th {
+        @apply border-b border-royal-900/10 px-4 py-3 font-semibold;
+    }
+
+    .table-base td {
+        @apply border-b border-royal-900/5 px-4 py-3;
+    }
+
+    .input-dark {
+        @apply block w-full rounded-md border-0 bg-royal-950/60 px-3.5 py-2.5 text-sm text-ivory-100 shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-ivory-100/30 focus:ring-2 focus:ring-inset focus:ring-gold-400;
+    }
+
+    .label-dark {
+        @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ivory-100/60;
+    }
+}
